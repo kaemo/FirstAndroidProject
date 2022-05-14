@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val imageButtonExit: ImageButton = findViewById(R.id.imageButtonExit)
         imageButtonExit.setOnClickListener {
-            exitProcess(0)
+            finishAffinity()
         }
     }
 
