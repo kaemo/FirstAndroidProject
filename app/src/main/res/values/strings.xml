@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My First Android App</string>
+    <string name="hello_text">Hello,</string>
+    <string name="counter_text">Counter:</string>
+    <string name="roll">Roll</string>
+    <string name="textCounter">0</string>
+    <string name="textName">Empty Name</string>
+    <string name="next_screen_button">Next</string>
+    <string name="Title_Screen1">Screen no 1</string>
+    <string name="Title_Screen2">Screen no 2</string>
+</resources>
