@@ -15,9 +15,6 @@ class SecondScreen : AppCompatActivity() {
         val textNameStr: TextView = findViewById(R.id.textName)
         textNameStr.text = "Jan Twardowski"
 
-        val textCounter: TextView = findViewById(R.id.textCounter)
-        var textCounterInt = 0
-
         val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
         imageButtonChevron.setOnClickListener {
             openScreen1()

@@ -2,10 +2,7 @@ package com.example.myfirstandroidapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class RandomNumberGenerator : AppCompatActivity() {
@@ -17,11 +14,10 @@ class RandomNumberGenerator : AppCompatActivity() {
         val textCounter: TextView = findViewById(R.id.textCounter)
         var textCounterInt = 0
 
+        rollDice()
+
         rollButton.setOnClickListener {
             Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
-
-            //val resultTextView: TextView = findViewById(R.id.textView3)
-            //resultTextView.text = (1..6).random().toString()
 
             rollDice()
 
@@ -33,6 +29,8 @@ class RandomNumberGenerator : AppCompatActivity() {
         imageButtonChevron.setOnClickListener {
             openScreen2()
         }
+
+
     }
 
     private fun rollDice() {
@@ -40,6 +38,18 @@ class RandomNumberGenerator : AppCompatActivity() {
         val diceRoll = dice.roll()
         val resultTextView: TextView = findViewById(R.id.textViewNumber)
         resultTextView.text = diceRoll.toString()
+
+        val imageDice: ImageView = findViewById(R.id.imageViewDice)
+        imageDice.setImageResource(when (diceRoll) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.ic_launcher_background
+        })
+        imageDice.contentDescription = diceRoll.toString()
     }
 
     class Dice(private val numSides: Int) {
