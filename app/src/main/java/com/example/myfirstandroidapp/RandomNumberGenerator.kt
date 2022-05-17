@@ -46,7 +46,7 @@ class RandomNumberGenerator : AppCompatActivity() {
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
             6 -> {
-                Log.i("imageDiceTag", "Lucky number has been drawn")
+                Log.i("imageDiceTag", "Lucky number has been drawn") //pierwszy bug ^^ ale dlaczego się na tym apka wywala?
                 R.drawable.dice_6
             }
             else -> {
@@ -60,7 +60,7 @@ class RandomNumberGenerator : AppCompatActivity() {
     class Dice(private val numSides: Int) {
 
         fun roll(): Int {
-            return (1..numSides).random()
+            return (1..numSides).random() //za każdym razem te same liczby się "losują" :D 5 1 6 6 5 1...
         }
     }
 
