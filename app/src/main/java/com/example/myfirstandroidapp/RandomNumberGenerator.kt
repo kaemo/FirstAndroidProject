@@ -2,6 +2,7 @@ package com.example.myfirstandroidapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
@@ -13,8 +14,6 @@ class RandomNumberGenerator : AppCompatActivity() {
 
         val textCounter: TextView = findViewById(R.id.textCounter)
         var textCounterInt = 0
-
-        rollDice()
 
         rollButton.setOnClickListener {
             Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
@@ -46,8 +45,14 @@ class RandomNumberGenerator : AppCompatActivity() {
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
-            6 -> R.drawable.dice_6
-            else -> R.drawable.ic_launcher_background
+            6 -> {
+                Log.i("imageDiceTag", "Lucky number has been drawn")
+                R.drawable.dice_6
+            }
+            else -> {
+                Log.w("imageDiceTag", "Number out of the range. Wrong picture was displayed.")
+                R.drawable.ic_launcher_background
+            }
         })
         imageDice.contentDescription = diceRoll.toString()
     }
