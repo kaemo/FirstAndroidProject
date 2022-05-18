@@ -13,7 +13,7 @@ class SecondScreen : AppCompatActivity() {
         setContentView(R.layout.activity_second_screen)
 
         val textNameStr: TextView = findViewById(R.id.textName)
-        textNameStr.text = "Jan Twardowski"
+        textNameStr.text = "Adam Mickiewicz"
 
         val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
         imageButtonChevron.setOnClickListener {
