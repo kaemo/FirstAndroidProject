@@ -20,6 +20,9 @@ class RandomNumberGenerator : AppCompatActivity() {
 
             rollDice()
 
+            // single line code second dice without pictures
+            findViewById<TextView>(R.id.secondCounter).text = (1..6).random().toString()
+
             textCounterInt += 1
             textCounter.text = textCounterInt.toString()
         }
@@ -28,8 +31,6 @@ class RandomNumberGenerator : AppCompatActivity() {
         imageButtonChevron.setOnClickListener {
             openScreen2()
         }
-
-
     }
 
     private fun rollDice() {
@@ -46,7 +47,7 @@ class RandomNumberGenerator : AppCompatActivity() {
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
             6 -> {
-                Log.i("imageDiceTag", "Lucky number has been drawn") //pierwszy bug ^^ ale dlaczego się na tym apka wywala?
+                Log.i("imageDiceTag", "Lucky number has been drawn") //problem już nie występuje, samoczynnie się naprawił przy kolejnym buildzie
                 R.drawable.dice_6
             }
             else -> {

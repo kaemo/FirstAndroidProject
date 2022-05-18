@@ -12,8 +12,14 @@ class SecondScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_screen)
 
-        val textNameStr: TextView = findViewById(R.id.textName)
-        textNameStr.text = "Jan Twardowski"
+        val userName = "Jan Kowalski"
+        val textNameStr: TextView = findViewById(R.id.secondScreenWelcomeText)
+        textNameStr.text = getString(R.string.second_screen_text, userName)
+
+        val appCounter = 1 // initial value
+        val textAppCounter: TextView = findViewById(R.id.counterTextID)
+        textAppCounter.text = getString(R.string.counter_text, appCounter)
+
 
         val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
         imageButtonChevron.setOnClickListener {
