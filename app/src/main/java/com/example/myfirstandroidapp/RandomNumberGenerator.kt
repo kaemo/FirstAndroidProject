@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
 
 class RandomNumberGenerator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +62,7 @@ class RandomNumberGenerator : AppCompatActivity() {
     class Dice(private val numSides: Int) {
 
         fun roll(): Int {
-            return (1..numSides).random() //za każdym razem te same liczby się "losują" :D 5 1 6 6 5 1...
+            return Random(System.currentTimeMillis()).nextInt(1, 7)
         }
     }
 
