@@ -24,7 +24,7 @@ class RandomNumberGenerator : AppCompatActivity() {
             // single line code second dice without pictures
             findViewById<TextView>(R.id.secondCounter).text = (1..6).random().toString()
 
-            textCounterInt += 1
+            textCounterInt++ //textCounterInt += 1
             textCounter.text = textCounterInt.toString()
         }
 
@@ -48,7 +48,7 @@ class RandomNumberGenerator : AppCompatActivity() {
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
             6 -> {
-                Log.i("imageDiceTag", "Lucky number has been drawn") //problem już nie występuje, samoczynnie się naprawił przy kolejnym buildzie
+                Log.i("imageDiceTag", "Lucky number has been drawn")
                 R.drawable.dice_6
             }
             else -> {
@@ -62,7 +62,7 @@ class RandomNumberGenerator : AppCompatActivity() {
     class Dice(private val numSides: Int) {
 
         fun roll(): Int {
-            return Random(System.currentTimeMillis()).nextInt(1, 7)
+            return Random(System.currentTimeMillis()).nextInt(1, numSides+1)
         }
     }
 

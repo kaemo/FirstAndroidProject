@@ -26,7 +26,7 @@ class SecondScreen : AppCompatActivity() {
             openScreen1()
         }
 
-        val button3: Button = findViewById(R.id.button3)
+        val button3: Button = findViewById(R.id.s2buttonDice)
         button3.setOnClickListener {
             openRNG()
         }
