@@ -26,9 +26,14 @@ class SecondScreen : AppCompatActivity() {
             openScreen1()
         }
 
-        val button3: Button = findViewById(R.id.s2buttonDice)
-        button3.setOnClickListener {
+        val buttonDice: Button = findViewById(R.id.s2buttonDice)
+        buttonDice.setOnClickListener {
             openRNG()
+        }
+
+        val buttonTip: Button = findViewById(R.id.s2buttonTip)
+        buttonTip.setOnClickListener {
+            openTipCalculator()
         }
     }
 
@@ -38,6 +43,12 @@ class SecondScreen : AppCompatActivity() {
     }
 
     private fun openRNG() {
+        finish()
         startActivity(Intent(this, RandomNumberGenerator::class.java))
+    }
+
+    private fun openTipCalculator() {
+        finish()
+        startActivity(Intent(this, TipCalculator::class.java))
     }
 }
