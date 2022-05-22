@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".TipCalculator">
 
+    <!-- nav bar -->
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -43,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/download_icon_arrows_back_left_move_previous_icon_1320165734240758228_512" />
 
-    <!-- nowy kod -->
+    <!-- rest of the screen -->
 
     <EditText
         android:id="@+id/cost_of_service"

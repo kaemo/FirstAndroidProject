@@ -1,17 +1,28 @@
 <resources>
+
     <string name="app_name">My First Android App</string>
-    <string name="second_screen_text">Hello, %s</string>
-    <string name="counter_text">The app has been opened %d times.</string>
-    <string name="roll">Roll</string>
+
+    <!-- activity_main -->
+
     <string name="next_screen_button">Next</string>
     <string name="Title_Screen1">Screen no 1</string>
+
+
+    <!-- SecondScreen -->
+
     <string name="Title_Screen2">Screen no 2</string>
-    <string name="Title_ScreenTipCalculator">Tip calculator</string>
+    <string name="second_screen_text">Hello, %s</string>
+    <string name="counter_text">The app has been opened %d times.</string>
+
+    <!-- RandomNumberGenerator -->
+
     <string name="Title_RandomNumberGeneratorScreen">Random number generator</string>
     <string name="counter_RNG_txt">Counter:</string>
+    <string name="roll">Roll</string>
 
     <!-- TipCalculator -->
 
+    <string name="Title_ScreenTipCalculator">Tip calculator</string>
     <string name="cost_of_service">Cost of Service</string>
     <string name="how_was_the_service">How was the service?</string>
     <string name="amazing_service">Amazing (20%)</string>
