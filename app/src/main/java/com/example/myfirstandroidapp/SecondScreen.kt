@@ -13,13 +13,17 @@ class SecondScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_screen)
 
-        val userName = "Jan Kowalski"
+        val userName = intent.getStringExtra("extraUserInput")
         val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
         val appCounter = 1 // initial value
         val textAppCounter = findViewById<TextView>(R.id.s2counterText)
         textAppCounter.text = getString(R.string.counter_text, appCounter)
+
+        val checkboxStatus = intent.getStringExtra("extraCheckboxStatus")
+        val textCheckboxStatus = findViewById<TextView>(R.id.s2checkboxStatus)
+        textCheckboxStatus.text = getString(R.string.checkboxStatus_text, checkboxStatus)
 
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
