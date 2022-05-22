@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondScreen : AppCompatActivity() {
@@ -13,42 +14,34 @@ class SecondScreen : AppCompatActivity() {
         setContentView(R.layout.activity_second_screen)
 
         val userName = "Jan Kowalski"
-        val textNameStr: TextView = findViewById(R.id.secondScreenWelcomeText)
+        val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
         val appCounter = 1 // initial value
-        val textAppCounter: TextView = findViewById(R.id.counterTextID)
+        val textAppCounter = findViewById<TextView>(R.id.s2counterText)
         textAppCounter.text = getString(R.string.counter_text, appCounter)
 
 
-        val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
-        imageButtonChevron.setOnClickListener {
-            openScreen1()
+        findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
+            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
         }
 
-        val buttonDice: Button = findViewById(R.id.s2buttonDice)
+        val buttonDice = findViewById<Button>(R.id.s2buttonDice)
         buttonDice.setOnClickListener {
             openRNG()
         }
 
-        val buttonTip: Button = findViewById(R.id.s2buttonTip)
+        val buttonTip = findViewById<Button>(R.id.s2buttonTip)
         buttonTip.setOnClickListener {
             openTipCalculator()
         }
     }
 
-    private fun openScreen1() {
-        finish()
-        startActivity(Intent(this, MainActivity::class.java))
-    }
-
     private fun openRNG() {
-        finish()
         startActivity(Intent(this, RandomNumberGenerator::class.java))
     }
 
     private fun openTipCalculator() {
-        finish()
         startActivity(Intent(this, TipCalculator::class.java))
     }
 }

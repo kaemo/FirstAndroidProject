@@ -1,6 +1,5 @@
 package com.example.myfirstandroidapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
@@ -28,9 +27,8 @@ class RandomNumberGenerator : AppCompatActivity() {
             textCounter.text = textCounterInt.toString()
         }
 
-        val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
-        imageButtonChevron.setOnClickListener {
-            openScreen2()
+        findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
+            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -64,10 +62,5 @@ class RandomNumberGenerator : AppCompatActivity() {
         fun roll(): Int {
             return Random(System.currentTimeMillis()).nextInt(1, numSides+1)
         }
-    }
-
-    private fun openScreen2() {
-        finish()
-        startActivity(Intent(this, SecondScreen::class.java))
     }
 }

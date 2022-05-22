@@ -1,8 +1,8 @@
 package com.example.myfirstandroidapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class TipCalculator : AppCompatActivity() {
@@ -10,14 +10,8 @@ class TipCalculator : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tip_calculator)
 
-        val imageButtonChevron: ImageButton = findViewById(R.id.imageButtonChevron)
-        imageButtonChevron.setOnClickListener {
-            openScreen2()
+        findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
+            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun openScreen2() {
-        finish()
-        startActivity(Intent(this, SecondScreen::class.java))
     }
 }

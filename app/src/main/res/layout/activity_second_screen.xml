@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".SecondScreen">
 
+    <!-- nav bar -->
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -43,8 +45,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/download_icon_arrows_back_left_move_previous_icon_1320165734240758228_512" />
 
+    <!-- rest of the screen -->
+
     <TextView
-        android:id="@+id/secondScreenWelcomeText"
+        android:id="@+id/s2welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
-        android:id="@+id/counterTextID"
+        android:id="@+id/s2counterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -67,7 +71,7 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondScreenWelcomeText" />
+        app:layout_constraintTop_toBottomOf="@+id/s2welcomeText" />
 
     <View
         android:id="@+id/centralVerticalLine"
