@@ -13,7 +13,7 @@
     <string name="Title_Screen2">Screen no 2</string>
     <string name="second_screen_text">Hello, %s</string>
     <string name="counter_text">The app has been opened %d times.</string>
-    <string name="checkboxStatus_text">CheckBox checked? %s</string>
+    <string name="constant_counter_text">The app has been opened 1 time.</string>
 
     <!-- RandomNumberGenerator -->
 

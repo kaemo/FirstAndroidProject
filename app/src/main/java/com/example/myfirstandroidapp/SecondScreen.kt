@@ -17,14 +17,14 @@ class SecondScreen : AppCompatActivity() {
         val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
-        val appCounter = 1 // initial value
+        val mainActivitySPStatus = intent.getIntExtra("extraSPStatus", -2)
         val textAppCounter = findViewById<TextView>(R.id.s2counterText)
-        textAppCounter.text = getString(R.string.counter_text, appCounter)
 
-        val checkboxStatus = intent.getStringExtra("extraCheckboxStatus")
-        val textCheckboxStatus = findViewById<TextView>(R.id.s2checkboxStatus)
-        textCheckboxStatus.text = getString(R.string.checkboxStatus_text, checkboxStatus)
-
+        if (mainActivitySPStatus == 1){
+            textAppCounter.text = getString(R.string.constant_counter_text)
+        } else {
+            textAppCounter.text = getString(R.string.counter_text, mainActivitySPStatus)
+        }
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
             Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
