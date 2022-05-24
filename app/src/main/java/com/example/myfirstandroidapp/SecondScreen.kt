@@ -13,11 +13,11 @@ class SecondScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_screen)
 
-        val userName = intent.getStringExtra("extraUserInput")
+        val userName = intent.getStringExtra(SEC_USER_NAME)
         val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
-        val mainActivitySPStatus = intent.getIntExtra("extraSPStatus", -2)
+        val mainActivitySPStatus = intent.getIntExtra(SEC_COUNTER, -2)
         val textAppCounter = findViewById<TextView>(R.id.s2counterText)
 
         if (mainActivitySPStatus == 1){

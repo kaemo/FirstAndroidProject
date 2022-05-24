@@ -1,13 +1,13 @@
 package com.example.myfirstandroidapp
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myfirstandroidapp.NavigationManager.navigateToSecondScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,14 +38,7 @@ class MainActivity : AppCompatActivity() {
             editor.putInt("COUNTER", 0)
             editor.apply()
         }
-
-        Intent(this, SecondScreen::class.java).also {
-            it.putExtra("extraUserInput", userNameFieldText)
-            it.putExtra("extraCheckboxStatus", checkboxStatus.isChecked.toString())
-            it.putExtra("extraSPStatus", sharedPref.getInt("COUNTER", -1))
-
-            startActivity(it)
-        }
+        navigateToSecondScreen(userNameFieldText, sharedPref.getInt(SHARED_PREF_COUNTER_KEY, -1))
     }
 
     private fun countAndSave() {
