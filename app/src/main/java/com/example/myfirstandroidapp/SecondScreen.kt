@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondScreen : AppCompatActivity() {
@@ -13,11 +12,11 @@ class SecondScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_screen)
 
-        val userName = intent.getStringExtra("extraUserInput")
+        val userName = intent.getStringExtra(SEC_USER_NAME)
         val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
-        val mainActivitySPStatus = intent.getIntExtra("extraSPStatus", -2)
+        val mainActivitySPStatus = intent.getIntExtra(SEC_COUNTER, -2)
         val textAppCounter = findViewById<TextView>(R.id.s2counterText)
 
         if (mainActivitySPStatus == 1){
@@ -27,7 +26,7 @@ class SecondScreen : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
-            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
+            onBackPressed()
         }
 
         val buttonDice = findViewById<Button>(R.id.s2buttonDice)
