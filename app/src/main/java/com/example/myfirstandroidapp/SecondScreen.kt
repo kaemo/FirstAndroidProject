@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class SecondScreen : AppCompatActivity() {
@@ -27,7 +26,7 @@ class SecondScreen : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
-            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
+            onBackPressed()
         }
 
         val buttonDice = findViewById<Button>(R.id.s2buttonDice)
