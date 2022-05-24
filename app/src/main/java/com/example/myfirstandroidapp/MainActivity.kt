@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         if (checkboxStatus.isChecked) {
             val editor = sharedPref.edit()
-            editor.putInt("COUNTER", 0)
+            editor.putInt(SHARED_PREF_COUNTER_KEY, 0)
             editor.apply()
         }
         navigateToSecondScreen(userNameFieldText, sharedPref.getInt(SHARED_PREF_COUNTER_KEY, -1))
@@ -45,13 +45,17 @@ class MainActivity : AppCompatActivity() {
 
         val sharedPref = getPreferences(Context.MODE_PRIVATE)
 
-        var launchCounter = sharedPref.getInt("COUNTER", 0)
+        var launchCounter = sharedPref.getInt(SHARED_PREF_COUNTER_KEY, 0)
 
         launchCounter++
 
         val editor = sharedPref.edit()
 
-        editor.putInt("COUNTER", launchCounter)
+        editor.putInt(SHARED_PREF_COUNTER_KEY, launchCounter)
         editor.apply()
+    }
+
+    companion object {
+        const val SHARED_PREF_COUNTER_KEY = "COUNTER"
     }
 }
