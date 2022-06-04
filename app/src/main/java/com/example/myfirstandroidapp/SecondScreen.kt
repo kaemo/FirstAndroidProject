@@ -16,13 +16,13 @@ class SecondScreen : AppCompatActivity() {
         val textNameStr = findViewById<TextView>(R.id.s2welcomeText)
         textNameStr.text = getString(R.string.second_screen_text, userName)
 
-        val mainActivitySPStatus = intent.getIntExtra(SEC_COUNTER, -2)
+        val appLaunchCounter = intent.getIntExtra(SEC_COUNTER, -2)
         val textAppCounter = findViewById<TextView>(R.id.s2counterText)
 
-        if (mainActivitySPStatus == 1){
+        if (appLaunchCounter == 1){
             textAppCounter.text = getString(R.string.constant_counter_text)
         } else {
-            textAppCounter.text = getString(R.string.counter_text, mainActivitySPStatus)
+            textAppCounter.text = getString(R.string.counter_text, appLaunchCounter)
         }
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
