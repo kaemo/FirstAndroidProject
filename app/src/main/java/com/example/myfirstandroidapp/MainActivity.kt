@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        sharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE) //taka sama linijka pojawia się 3 razy w kodzie - czy da się tego uniknąć?
+        sharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
 
         countAndSave()
 
@@ -35,8 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         val checkboxStatus = findViewById<CheckBox>(R.id.s1checkBox)
 
-        sharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
-
         if (checkboxStatus.isChecked) {
             val editor = sharedPrefs.edit()
             editor.putInt(SHARED_PREF_COUNTER_KEY, 0)
@@ -46,8 +44,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun countAndSave() {
-
-        sharedPrefs = getSharedPreferences(SHARED_PREFS_KEY, Context.MODE_PRIVATE)
 
         var launchCounter = sharedPrefs.getInt(SHARED_PREF_COUNTER_KEY, 0)
 

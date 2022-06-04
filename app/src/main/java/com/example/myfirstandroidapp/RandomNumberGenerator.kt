@@ -23,12 +23,12 @@ class RandomNumberGenerator : AppCompatActivity() {
             // single line code second dice without pictures
             findViewById<TextView>(R.id.secondCounter).text = (1..6).random().toString()
 
-            textCounterInt++ //textCounterInt += 1
+            textCounterInt++
             textCounter.text = textCounterInt.toString()
         }
 
         findViewById<ImageButton>(R.id.imageButtonChevron).setOnClickListener {
-            Toast.makeText(this, "Function disabled! Try system back instead.", Toast.LENGTH_SHORT).show()
+            onBackPressed()
         }
     }
 
