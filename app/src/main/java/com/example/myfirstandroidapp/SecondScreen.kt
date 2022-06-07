@@ -38,6 +38,10 @@ class SecondScreen : AppCompatActivity() {
         buttonTip.setOnClickListener {
             openTipCalculator()
         }
+
+        findViewById<Button>(R.id.s2buttonANC).setOnClickListener {
+            startActivity(Intent(this, NumberConverter::class.java))
+        }
     }
 
     private fun openRNG() {

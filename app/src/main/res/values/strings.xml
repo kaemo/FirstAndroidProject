@@ -33,4 +33,10 @@
     <string name="calculate">Calculate</string>
     <string name="tip_amount">Tip Amount</string>
 
+    <!-- AccountNumberConverter -->
+
+    <string name="Title_ScreenNumberConverter">Account number converter</string>
+    <string name="Enter_number">Enter your account number</string>
+    <string name="Question">How would you like to format your number?</string>
+
 </resources>
