@@ -69,6 +69,7 @@
         android:hint="Enter value"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -127,6 +128,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         tools:text="29 8898 0003 0000 0000 0000 0001" />
+
+    <TextView
+        android:id="@+id/textViewValidation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAccNum"
+        tools:text="Example validation text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

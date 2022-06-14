@@ -1,13 +1,20 @@
 package com.example.myfirstandroidapp
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 
 class NumberConverter : AppCompatActivity() {
+
+    var input = ""
+    var format = FormatType.RAW
+//    var validNumberFlag: Boolean = false    //martwy kod ale pytanko: 1. lateinit dla Booleana? 2. tab vs spacje
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_number_converter)
@@ -21,38 +28,53 @@ class NumberConverter : AppCompatActivity() {
         // rest of the screen
 
         val userInputField = findViewById<EditText>(R.id.userAccNum)
+        val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         val showNumber = findViewById<TextView>(R.id.textViewPresentNumber)
+        val showValidation = findViewById<TextView>(R.id.textViewValidation)
 
-        val radioRaw = findViewById<RadioButton>(R.id.radioButtonRaw)
-        val radioFormatted = findViewById<RadioButton>(R.id.radioButtonFormatted)
-        val radioMasked = findViewById<RadioButton>(R.id.radioButtonMasked)
+        radioGroup.check(R.id.radioButtonRaw)   //domyślne zaznaczenie jednego z radiobuttonów
 
-        radioRaw.setOnClickListener {
-            val convToTxt = userInputField.text.toString()
-            showNumber.text = convToTxt.formatAccountNumberOrRaw()
+        radioGroup.setOnCheckedChangeListener { _, id ->                        //jeszcze raz bym potrzebował wytłumaczenia o co z tym parametrem 'group' chodziło i w sumie dlaczego możemy go w tym momencie pominąć - i kiedy byśmy niemogli poinąć
+            format = resolveFormatTypeById(id)
+            Log.d("TEST", "Format type: $format")
+            showNumber.text = input.formatAccountNumberOrRaw(format)
+            showValidation.text = checkIfCorrectAccountNumber(input)
         }
 
-        radioFormatted.setOnClickListener {
-            val convToTxt = userInputField.text.toString()
-            showNumber.text = convToTxt.formatAccountNumberOrRaw("format")
+        userInputField.doOnTextChanged { text, _, _, _ ->
+            showValidation.text = ""
+            input = text.toString()
+            showNumber.text = input.formatAccountNumberOrRaw(format)
         }
 
-        radioMasked.setOnClickListener {
-            val convToTxt = userInputField.text.toString()
-            showNumber.text = convToTxt.formatAccountNumberOrRaw("mask")
+
+
+    }
+
+    private fun checkIfCorrectAccountNumber(number: String): String{
+        return if (number.length != 26) {
+            "Invalid account number!"
+        } else {
+            ""
         }
     }
 
+    private fun resolveFormatTypeById(id: Int): FormatType {
+        return when (id) {
+            R.id.radioButtonFormatted -> FormatType.FORMATTED
+            R.id.radioButtonMasked -> FormatType.MASKED
+            else -> FormatType.RAW
+        }
+    }
 
-    private fun String.formatAccountNumberOrRaw(masked: String = "raw"): String { //nie do końca wiedziałem jak ta funkcja dzialała więc ją zmodyfikowałem na swoją
+    private fun String.formatAccountNumberOrRaw(format: FormatType): String {
         return if (this.length != 26) {
-            "Invalid account number!"
+            this
         } else {
-            when (masked) {
-                "raw" -> this
-                "format" -> formatted(this)
-                "mask" -> masked(this)
-                else -> "unknown operation"
+            when (format) {
+                FormatType.RAW -> this
+                FormatType.FORMATTED -> formatted(this)
+                FormatType.MASKED -> masked(this)
             }
         }
     }
@@ -74,8 +96,12 @@ class NumberConverter : AppCompatActivity() {
         val str1 = rawNumber.dropLast(20).replaceRange(2, 2, " ")
         val str2 = rawNumber.drop(22)
 
-        return str1 + " ... " + str2
+        return "$str1 ... $str2"
     }
+}
 
-
+enum class FormatType {
+    RAW,
+    FORMATTED,
+    MASKED
 }
