@@ -48,7 +48,6 @@ class NumberConverter : AppCompatActivity() {
         }
 
 
-
     }
 
     private fun checkIfCorrectAccountNumber(number: String): String{
@@ -81,20 +80,20 @@ class NumberConverter : AppCompatActivity() {
 
     private fun formatted(rawNumber: String): String {
 
-        var formattedNumber = rawNumber.replaceRange(2, 2, " ")
-        formattedNumber = formattedNumber.replaceRange(7, 7, " ")
-        formattedNumber = formattedNumber.replaceRange(12, 12, " ")
-        formattedNumber = formattedNumber.replaceRange(17, 17, " ")
-        formattedNumber = formattedNumber.replaceRange(22, 22, " ")
-        formattedNumber = formattedNumber.replaceRange(27, 27, " ")
+        val chunkedNotFullString = rawNumber.drop(2).chunked(4)
+        var result = "${rawNumber.take(2)} "
 
-        return formattedNumber
+        chunkedNotFullString.forEach {
+            result += "$it "
+        }
+
+        return result
     }
 
     private fun masked(rawNumber: String): String {
 
-        val str1 = rawNumber.dropLast(20).replaceRange(2, 2, " ")
-        val str2 = rawNumber.drop(22)
+        val str1 = rawNumber.take(6).replaceRange(2, 2, " ")
+        val str2 = rawNumber.takeLast(4)
 
         return "$str1 ... $str2"
     }
