@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/drawable/ic_bank.xml" value="0.2565" />
         <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_number_converter.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_random_number_generator.xml" value="0.264" />
-        <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_second_screen.xml" value="0.264" />
+        <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_second_screen.xml" value="0.2" />
         <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/activity_tip_calculator.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Krz/AndroidStudioProjects/MyFirstAndroidApp/app/src/main/res/layout/card_layout.xml" value="0.264" />
       </map>
     </option>
   </component>

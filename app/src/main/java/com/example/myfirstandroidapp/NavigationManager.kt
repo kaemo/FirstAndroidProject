@@ -17,4 +17,8 @@ object NavigationManager {
             startActivity(it)
         }
     }
+
+    fun Activity.navigateToRandomNumberGenerator(){     //tutaj będę potrzebował pomocy - nie działa mi to na recycledView
+        Intent(this, RandomNumberGenerator::class.java)
+    }
 }

@@ -73,99 +73,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/s2welcomeText" />
 
-    <View
-        android:id="@+id/centralVerticalLine"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <View
-        android:id="@+id/supportHorizontalLine1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="160dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <View
-        android:id="@+id/supportHorizontalLineMiddle"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/supportHorizontalLine1"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/s2buttonDice"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Dice"
-        app:backgroundTint="#9F1D35"
-        app:layout_constraintBottom_toTopOf="@+id/supportHorizontalLineMiddle"
-        app:layout_constraintEnd_toStartOf="@+id/centralVerticalLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/supportHorizontalLine1" />
-
-    <Button
-        android:id="@+id/s2buttonTip"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Tip Calculator"
-        app:backgroundTint="#9F1D35"
-        app:layout_constraintBottom_toTopOf="@+id/supportHorizontalLineMiddle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/centralVerticalLine"
-        app:layout_constraintTop_toBottomOf="@+id/supportHorizontalLine1" />
-
-    <Button
-        android:id="@+id/s2buttonANC"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Account number converter"
-        app:backgroundTint="#9F1D35"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/centralVerticalLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/supportHorizontalLineMiddle" />
-
-    <Button
-        android:id="@+id/s2button6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="TBD"
-        app:backgroundTint="#9F1D35"
+        android:layout_marginTop="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/centralVerticalLine"
-        app:layout_constraintTop_toBottomOf="@+id/supportHorizontalLineMiddle" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s2counterText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
